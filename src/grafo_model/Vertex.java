@@ -29,5 +29,29 @@ public class Vertex {
         return data;
     }
 
+    public void print() {
+		String message = "";
+		
+		if (this.edges.size() == 0) {
+			System.out.println(this.data + " -->");
+			return;
+		}
+		
+		for(int i = 0; i < this.edges.size(); i++) {
+			if (i == 0) {
+				message += this.edges.get(i).getSrc().data + " -->  ";
+			}
+
+			message += this.edges.get(i).getDest().data;
+
+			message += " (" + this.edges.get(i).getWeight() + ")";
+
+			if (i != this.edges.size() - 1) {
+				message += ", ";
+			}
+		}
+		System.out.println(message);
+	}
+
 
 }

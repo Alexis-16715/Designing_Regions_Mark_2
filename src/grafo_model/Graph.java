@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Graph {
 
     private ArrayList<Vertex> vertices;
+    private ArrayList<Vertex> edges;
 
 
 
@@ -37,6 +38,12 @@ public class Graph {
         return vertices;
     }
 
+    public void print(){
+        for(Vertex v: this.vertices){
+            v.print();
+        }
+    }
+
     public static void main(String[] args) {
         Graph Argentina = new Graph();
 
@@ -44,6 +51,8 @@ public class Graph {
         Vertex cordoba = Argentina.addVertex("Cordoba");
 
         Argentina.addEdge(buenosAires, cordoba, 50);
+
+        Argentina.print();
     }
 
 }
